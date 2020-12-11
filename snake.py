@@ -62,10 +62,12 @@ class Fruit:
         self.x = randint(0, cols-1)
         self.y = randint(0, rows-1)
         self.pos = Vector2(self.x, self.y)
-        while self.pos in snake_copy[:]:
-            self.x = randint(0, cols-1)
-            self.y = randint(0, rows-1)
-            self.pos = Vector2(self.x, self.y)
+        for pos in snake_copy[:]:
+            if pos == self.pos:
+
+                self.x = randint(0, cols-1)
+                self.y = randint(0, rows-1)
+                self.pos = Vector2(self.x, self.y)
 
 
 class main:
