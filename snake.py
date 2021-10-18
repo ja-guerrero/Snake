@@ -1,7 +1,6 @@
 import pygame
 from pygame.math import Vector2
 import pygame_menu
-from colors import *
 from sys import exit
 from random import randint
 
@@ -52,7 +51,7 @@ snake_copy = Snake().body
 class Fruit:
     def __init__(self):
         self.randomize()
-        global snake_copy
+
 
     def draw(self):
         fruit_border = pygame.Rect(int(self.x * size), int(self.y *size ), size, size )
@@ -221,7 +220,7 @@ def start_the_game():
 
 
 
-menu = pygame_menu.Menu(300, 400, 'Snake',theme=pygame_menu.themes.THEME_BLUE)
-menu.add_button('Play', start_the_game)
-menu.add_button('Quit', pygame_menu.events.EXIT)
+menu = pygame_menu.Menu('Snake',300, 400, theme=pygame_menu.themes.THEME_BLUE)
+menu.add.button('Play', start_the_game)
+menu.add.button('Quit', pygame_menu.events.EXIT)
 menu.mainloop(SCREEN)
